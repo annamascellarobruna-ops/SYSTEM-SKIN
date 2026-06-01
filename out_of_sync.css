@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&family=Space+Grotesk:wght@400;700&family=Space+Mono&display=swap');
+
+/*---------------- BASE & TYPOGRAPHY ----------------*/
+body.out-of-sync-experience {
+    background-color: #000;
+    color: #cfcfcf;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/*---------------- CRT SCANLINES ----------------*/
+body.out-of-sync-experience::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.06) 0px,
+        rgba(255, 255, 255, 0.06) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    opacity: 0.6;
+    z-index: 99999;
+}
+
+/*---------------- CHAOTIC TITLE OVERLAY ----------------*/
+.sync-header-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#sync-glitch-title {
+    position: absolute;
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    margin: 0;
+    color: #b05050;
+    mix-blend-mode: difference;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    will-change: top, left, transform, text-shadow;
+    animation: sync-vibration 0.15s infinite linear, sync-color-glitch 0.2s infinite steps(2);
+}
+
+/*---------------- CHAOTIC IMAGE OVERLAY ----------------*/
+.sync-glitch-images-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    mix-blend-mode: screen;
+}
+
+.sync-glitch-float-image {
+    position: absolute;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    will-change: top, left, transform, filter;
+    animation: sync-vibration 0.15s infinite linear, sync-image-glitch 0.2s infinite steps(2);
+    border: 1px solid #444;
+    background-color: #111;
+}
+
+.sync-glitch-float-image.format-v { width: 160px; height: 240px; }
+.sync-glitch-float-image.format-h { width: 220px; height: 147px; }
+
+.sync-glitch-float-image.size-big.format-v { width: min(52vw, 560px); height: min(78vw, 840px); }
+.sync-glitch-float-image.size-big.format-h { width: min(88vw, 960px); height: min(58vw, 640px); }
+
+/*---------------- GLITCH ANIMATIONS ----------------*/
+@keyframes sync-vibration {
+    0% { transform: translate(-50%, -50%) translate(0, 0); }
+    20% { transform: translate(-50%, -50%) translate(-2px, 1px); }
+    40% { transform: translate(-50%, -50%) translate(1px, -1px); }
+    60% { transform: translate(-50%, -50%) translate(-1px, -2px); }
+    80% { transform: translate(-50%, -50%) translate(2px, 2px); }
+    100% { transform: translate(-50%, -50%) translate(0, 0); }
+}
+
+@keyframes sync-color-glitch {
+    0% { text-shadow: 3px 0 0 rgba(201, 74, 74, 0.4), -3px 0 0 rgba(255, 255, 255, 0.2); }
+    50% { text-shadow: -2px 0 0 rgba(201, 74, 74, 0.5), 2px 0 0 rgba(255, 255, 255, 0.1); }
+    100% { text-shadow: 3px 0 0 rgba(201, 74, 74, 0.4), -3px 0 0 rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes sync-image-glitch {
+    0% { filter: contrast(1.4) brightness(1.1); }
+    50% { filter: invert(1) contrast(2) brightness(1.2); }
+    100% { filter: contrast(1.4) brightness(1.1); }
+}
+
+/*---------------- PINTEREST GRID ----------------*/
+.sync-pinterest-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px 40vh 40px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.sync-grid-cell {
+    background-color: #111;
+    border: 1px solid #444;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.format-v { grid-row: span 2; aspect-ratio: 2 / 3; }
+.format-h { grid-row: span 1; aspect-ratio: 3 / 2; }
+
+.sync-text-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    background-color: #1a1a1a;
+}
+
+.sync-text-body {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+}
+
+/*---------------- CREDIT CELLS ----------------*/
+.sync-credit-content {
+    padding: 35px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.sync-credit-content span { color: #fff; }
+
+/*---------------- IMAGE HOVER CREDITS ----------------*/
+.sync-image-back-credit {
+    position: absolute;
+    inset: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: #1a1a1a;
+}
+
+.sync-deconstructed-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.4s ease, opacity 0.4s ease;
+    will-change: filter, opacity, transform;
+    z-index: 2;
+}
+
+/*---------------- SCROLL GLITCH EFFECTS ----------------*/
+.sync-deconstructed-image.glitch-invert {
+    filter: invert(1) contrast(2) brightness(1.2) !important;
+}
+
+.sync-deconstructed-image.glitch-distort {
+    transform: scaleX(1.3) scaleY(0.8) skewX(5deg);
+    filter: contrast(1.5) brightness(1.1);
+}
+
+body:not(.is-scrolling) .sync-grid-cell:not(.sync-text-cell):hover .sync-deconstructed-image {
+    filter: blur(30px) !important;
+    opacity: 0 !important;
+}
+
+/*---------------- RESPONSIVE ----------------*/
+@media (max-width: 900px) {
+    .sync-pinterest-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    #sync-glitch-title { font-size: 4rem; }
+
+    .sync-glitch-float-image.format-v { width: 120px; height: 180px; }
+    .sync-glitch-float-image.format-h { width: 160px; height: 107px; }
+
+    .sync-glitch-float-image.size-big.format-v { width: min(72vw, 400px); height: min(108vw, 600px); }
+    .sync-glitch-float-image.size-big.format-h { width: min(95vw, 680px); height: min(63vw, 450px); }
+}

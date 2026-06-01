@@ -1,0 +1,666 @@
+/*---------------- TYPOGRAPHY & BASE SETUP ----------------*/
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Hubot+Sans:wdth,wght@75..125,200..900&display=swap');
+
+body {
+    background: rgb(16, 16, 16);
+    color: #cfcfcf;
+    font-family: "Hubot Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin: 0;
+    padding: 0;
+}
+
+.canvas-container {
+    margin: 2rem 2rem 2.5rem 2rem;
+    overflow: hidden;
+}
+
+.hidden { display: none; }
+
+/*---------------- GLOBAL BLOCK STRUCTURE ----------------*/
+.visual-block {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 8rem;
+}
+
+/*---------------- GLOBAL TEXT COLUMN ----------------*/
+.text-fragment {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.text-fragment.behavior-top {
+    justify-content: flex-start;
+    padding-top: 2rem;
+}
+
+.text-fragment p {
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------- GLOBAL IMAGE COLUMN ----------------*/
+.image-wrapper {
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+
+.image-wrapper img,
+[class^="image"][class*="-layer"] img,
+[class^="image"][class*="-wrapper"] img,
+.image9-center img,
+.image13-center img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*---------------- SECTION-SPECIFIC VARIATIONS (IDs) ----------------*/
+
+#clean-sec-1 {
+    flex-direction: row-reverse;
+}
+
+#clean-sec-2 {
+    display: block;
+    margin-top: 10rem;
+    position: relative;
+    width: 100%;
+    height: 1250px;
+}
+
+#clean-sec-2 .image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+#clean-sec-2 .text-fragment {
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-self: top;
+    justify-content: left;
+    width: 30%;
+    max-width: 30%;
+    top: 0;
+    left: 5%;
+    margin: 0;
+}
+
+/*---------------- MUTATED TYPOGRAPHIC EFFECTS ----------------*/
+.text-1-pack1 { width: 100%; line-height: 0.22; margin-bottom: 0.4rem; }
+.text-1-pack2 { width: 100%; line-height: 0.45; margin-bottom: 3.5rem; }
+.text-1-pack3 { width: 100%; line-height: 1.4; }
+
+.text-2-pack1 { width: 70%; line-height: 1.4; text-align: left; margin-bottom: 2rem; }
+.text-2-pack2 { width: 100%; line-height: 0.45; text-align: left; font-stretch: 150%; }
+.text-2-pack3 { width: 40%; text-align: left; }
+
+/*---------------- MULTI-LAYER CONTAINER (SECTION 2 FAN) ----------------*/
+.image2-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.image2-wrapper [class^="creature-2-"] { position: absolute; }
+.image2-wrapper [class^="creature-2-"] img { width: 100% !important; height: auto !important; display: block; }
+
+.creature-2-1 { width: 23%; top: 0; right: 1%; z-index: 1; transform: rotate(10.61deg); }
+.creature-2-2 { width: 23%; top: 5%; right: 5%; z-index: 2; transform: rotate(-7.89deg); }
+.creature-2-3 { width: 40%; top: 11%; right: 4.8%; z-index: 3; transform: rotate(10.42deg); }
+.creature-2-4 { width: 50%; top: 19%; right: 12%; z-index: 4; transform: rotate(-6.16deg); }
+.creature-2-5 { width: 60%; top: 45%; right: 20%; z-index: 5; transform: rotate(0deg); }
+
+/*---------------- SECTION 3: LAYERED CANVAS ----------------*/
+#clean-sec-3 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 950px;
+    margin-bottom: 0;
+    background-color: rgba(30, 30, 30, 0.2);
+}
+
+#clean-sec-3 .image-stack { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.stack-1 { position: absolute; width: 60%; top: 5%; left: 5%; z-index: 3; transform: rotate(0deg); }
+.stack-2 { position: absolute; width: 55%; top: 15%; right: -5%; z-index: 1; transform: rotate(36.32deg); }
+.stack-3 { position: absolute; width: 55%; top: 30%; right: -35%; z-index: 2; transform: rotate(90deg); }
+
+/*---------------- SECTION 3: ILLUSTRATOR-STYLE TEXT ----------------*/
+#clean-sec-3 .text-fragment {
+    position: absolute;
+    z-index: 10;
+    width: 40%;
+    max-width: 40%;
+    top: 68%;
+    left: 30%;
+    height: 20%;
+    display: block;
+    background-color: transparent;
+}
+
+.text-3-pack1 { position: absolute; top: 25%; left: 8%; width: auto; font-size: 1rem; text-align: left; }
+.text-3-pack2 { position: absolute; top: 43%; right: 30%; width: auto; font-size: 1.1rem; line-height: 0.15; text-align: right; }
+.text-3-pack3 { position: absolute; bottom: 30%; right: 25%; width: auto; font-size: 1rem; text-align: right; }
+.text-3-pack4 { position: absolute; bottom: 24%; right: 5%; width: auto; font-size: 1rem; text-align: right; }
+
+/*---------------- SECTION 4: OFFSET DIAGONAL CANVAS ----------------*/
+#clean-sec-4 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+
+.image4-layer-1 { position: absolute; width: 65%; top: 0; left: -4%; z-index: 1; }
+.image4-layer-2 { position: absolute; width: 65%; top: 20%; left: 10%; z-index: 2; }
+
+/*---------------- SECTION 5: EDITORIAL MARGIN CONTROL ----------------*/
+#clean-sec-5 .image-wrapper {
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+/*---------------- SECTION 6: ROTATION & INVERTED OFFSET CANVAS ----------------*/
+#clean-sec-6 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+
+.image6-layer-base { position: absolute; width: 60%; top: 36%; left: 30%; z-index: 1; transform: rotate(-150.89deg); }
+.image6-layer-top { position: absolute; width: 60%; top: 0%; left: 14%; z-index: 2; transform: rotate(0deg); }
+
+/*---------------- SECTION 7: EDITORIAL BLOCKS & SATELLITES ----------------*/
+#clean-sec-7 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 900px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.image7-wrapper {
+    position: absolute;
+    width: 48%;
+    top: 5%;
+    left: 8%;
+    z-index: 1;
+}
+
+.text-7-canvas {
+    position: absolute;
+    width: 34%;
+    top: 30%;
+    right: 6%;
+    z-index: 2;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.text-7-intro {
+    margin: 0 0 2.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.text-7-block-vch {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-left: 3.5rem;
+    box-sizing: border-box;
+}
+
+.vch-main-sentence {
+    margin: 0;
+    font-variation-settings: "wdth" 100;
+}
+
+.text-7-block-vch span {
+    position: absolute;
+    font-size: 1.05rem;
+    display: inline-block;
+}
+
+.vch-satellite-visible { top: -1.3rem; left: 3.5rem; }
+.vch-satellite-coherent { bottom: -1.3rem; left: 8.4rem; }
+.vch-satellite-hyper { bottom: -1.3rem; left: 17.1rem; }
+
+/*---------------- SECTION 8: INVERSE FAN CASCADE ----------------*/
+#clean-sec-8 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 950px;
+}
+
+.image8-layer-base { position: absolute; width: 75%; top: 40%; left: -10%; z-index: 1; transform: rotate(13.77deg); }
+.image8-layer-mid { position: absolute; width: 55%; top: 30%; left: 14%; z-index: 2; transform: rotate(-1.7deg); }
+.image8-layer-top { position: absolute; width: 55%; top: 5%; left: 22%; z-index: 3; transform: rotate(0deg); }
+
+/*---------------- SECTION 9: COLLAPSE & TYPOGRAPHIC ECHO ----------------*/
+#clean-sec-9 {
+    display: flow-root;
+    position: relative;
+    width: 100%;
+    height: 1200px;
+    margin-top: 18rem;
+    margin-bottom: 2rem;
+}
+
+.image9-center { position: absolute; width: 55%; top: 25%; left: 22.5%; z-index: 5; }
+
+.text-9-container-top { position: absolute; top: 2%; left: 0; width: 100%; height: 20%; z-index: 6; font-size: 0.9rem; }
+.text-9-container-top div { position: absolute; width: 50%; }
+
+.text-9-pack1 { top: 40%; left: 0%; text-align: left; opacity: 0.9; }
+.text-9-pack2 { top: 10%; left: 45%; text-align: left; font-variation-settings: "wdth" 110; }
+.text-9-pack3 { top: 30%; left: 60%; text-align: left; font-variation-settings: "wdth" 90; }
+.text-9-pack4 { top: 30%; right: -25%; text-align: left; font-variation-settings: "wdth" 140; line-height: 0.15; }
+
+.text-9-container-bottom { position: absolute; top: 72%; left: 0; width: 100%; height: 250px; z-index: 6; }
+.text-9-container-bottom div { position: absolute; width: 100%; text-align: center; }
+
+.text-9-pack5  { bottom: 175px; font-size: 0.8rem; font-variation-settings: "wdth" 45; text-transform: none; }
+.text-9-pack6  { bottom: 167px; font-size: 0.8rem; font-variation-settings: "wdth" 45; text-transform: none; }
+.text-9-pack7  { bottom: 122px; font-size: 0.9rem; font-variation-settings: "wdth" 75; letter-spacing: -0.5px; }
+.text-9-pack8  { bottom: 110px; font-size: 0.9rem; font-variation-settings: "wdth" 75; letter-spacing: -0.5px; }
+.text-9-pack9  { bottom: 98px; font-size: 0.9rem; font-variation-settings: "wdth" 75; }
+.text-9-pack10 { bottom: 30px; font-size: 1rem; font-variation-settings: "wdth" 85; letter-spacing: 0.5px; opacity: 1; }
+
+/*---------------- SECTION 10: EDITORIAL GRID WITH LATERAL GLITCH ----------------*/
+#clean-sec-10 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 950px;
+}
+
+.image10-wrapper {
+    position: absolute;
+    width: 42%;
+    top: 5%;
+    left: 29%;
+    z-index: 1;
+}
+
+.text-10-container-right {
+    position: absolute;
+    width: calc(29% - 4.4rem);
+    height: 350px;
+    bottom: 8%;
+    right: 2.2rem;
+    z-index: 2;
+    font-size: 0.95rem;
+}
+
+.text-10-container-right div {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+}
+
+.text-10-pack1 { bottom: 190px; font-variation-settings: "wdth" 90; line-height: 1.1; }
+.text-10-pack2 { bottom: 184px; font-variation-settings: "wdth" 95; line-height: 1.1; letter-spacing: -0.2px; }
+.text-10-pack3 { bottom: 176px; font-variation-settings: "wdth" 100; line-height: 1.1; }
+.text-10-pack4 { bottom: 20px; font-size: 1rem; font-variation-settings: "wdth" 100; line-height: 1.3; }
+
+/*---------------- SECTION 11: KINETIC FAN & TYPOGRAPHIC DRIFT ----------------*/
+#clean-sec-11 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 1200px;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+
+.image11-layer-base { position: absolute; width: 62%; top: 22%; left: 14%; z-index: 1; transform: rotate(-17.95deg); }
+.image11-layer-mid { position: absolute; width: 62%; top: 12%; left: 19%; z-index: 2; transform: rotate(-11.09deg); }
+.image11-layer-top { position: absolute; width: 62%; top: 2%; left: 24%; z-index: 3; transform: rotate(0deg); }
+
+.text-11-canvas { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 4; font-size: 1rem; pointer-events: none; }
+.text-11-canvas div, .text-11-canvas span { position: absolute; }
+
+.text-11-blur-group { top: 23%; left: 6%; width: 150px; height: 60px; }
+.blur-p1 { top: 0; left: 0; font-size: 1.1rem; }
+.blur-p2 { top: 12px; left: 4px; font-size: 1rem; font-variation-settings: "wdth" 90; }
+.blur-p3 { top: 20px; left: -8px; font-size: 1.1rem; font-variation-settings: "wdth" 110; }
+
+.text-11-glitch-group { top: 68%; left: 7%; width: 150px; height: 30px; font-size: 1.1rem; }
+.glitch-left { left: 0; font-variation-settings: "wdth" 85; }
+.glitch-right { top: 28%; left: 19px; font-variation-settings: "wdth" 115; letter-spacing: -1px; }
+
+.text-11-transformation { top: 78%; left: 6%; font-size: 1.05rem; font-variation-settings: "wdth" 95; }
+.text-11-certainty { top: 86%; left: 9%; font-size: 1.05rem; }
+.text-11-manifesto { bottom: 2%; left: 6%; width: 80%; font-size: 1.1rem; font-variation-settings: "wdth" 105; }
+
+/*---------------- SECTION 12: GRID WITH ASCENDING DIAGONAL OFFSET ----------------*/
+#clean-sec-12 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 1000px;
+}
+
+.image12-layer-base {
+    position: absolute;
+    width: 44%;
+    top: 22%;
+    left: 20.5%;
+    z-index: 1;
+}
+
+.image12-layer-top {
+    position: absolute;
+    width: 44%;
+    top: 0;
+    left: 36%;
+    z-index: 2;
+}
+
+/*---------------- SECTION 13: LAYER INTERFERENCE / CLOSING ----------------*/
+#clean-sec-13 {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 1250px;
+    margin-top: 12rem;
+    margin-bottom: 12rem;
+}
+
+.image13-center {
+    position: absolute;
+    width: 44%;
+    top: 2%;
+    left: 28%;
+    z-index: 1;
+}
+
+.text-13-editorial-wrap {
+    position: absolute;
+    width: 48%;
+    left: 26%;
+    bottom: 4%;
+    z-index: 2;
+    font-size: 0.95rem;
+}
+
+.text-13-block-top {
+    position: relative;
+    width: 100%;
+    margin-bottom: 5.5rem;
+}
+
+.text-13-block-top p.sentence-1 {
+    margin: 0;
+    padding-left: 2.5rem;
+    line-height: 1.3;
+}
+
+.text-13-block-top span {
+    position: absolute;
+    width: auto;
+    display: inline-block;
+}
+
+.perhaps-p1 { top: -24px; left: 7.2rem; font-size: 0.95rem; }
+.perhaps-p2 { top: 14px; left: 2.5rem; font-variation-settings: "wdth" 90; }
+.perhaps-p3 { top: 19px; left: 3.8rem; font-variation-settings: "wdth" 105; letter-spacing: -0.3px; }
+.perhaps-p4 { top: 25px; left: 2.7rem; font-variation-settings: "wdth" 95; }
+.perhaps-p5 { top: 31px; left: 2.6rem !important; font-size: 1rem; font-variation-settings: "wdth" 100; }
+
+.text-13-block-bottom {
+    position: relative;
+    width: 100%;
+    padding-left: 9rem;
+    box-sizing: border-box;
+}
+
+.text-13-block-bottom p.sentence-2 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+.text-13-block-bottom span { position: absolute; width: auto; display: inline-block; }
+
+.perhaps-p6 { top: -24px; left: 10.2rem; font-size: 0.95rem; font-variation-settings: "wdth" 100; }
+.perhaps-p7 { top: 14px; left: 9rem; font-variation-settings: "wdth" 105; }
+.perhaps-p8 { top: 20px; left: 9rem; font-variation-settings: "wdth" 90; }
+
+/*==========================================================================
+  DYNAMIC INTERFERENCE SYSTEM (GLITCH STATE — GEOMETRIC ALTERATION)
+============================================================================*/
+
+body.glitch-active {
+    background: rgb(8, 4, 12);
+    transition: background 0.3s ease;
+}
+
+body.glitch-active .visual-block p,
+body.glitch-active .visual-block span,
+body.glitch-active .text-fragment div,
+body.glitch-active [class*="-pack"] p {
+    color: #B15EFF !important;
+    mix-blend-mode: hard-light;
+    text-shadow: 3px 0px 0px rgba(255, 0, 0, 0.4), -3px 0px 0px rgba(0, 0, 255, 0.4);
+    font-variation-settings: "wdth" 145 !important;
+    transition: all 0.1s steps(2);
+}
+
+body.glitch-active .visual-block img {
+    mix-blend-mode: hard-light;
+    opacity: 0.9;
+}
+
+/*---------------- GLITCH DEFORMATIONS BY SECTION ----------------*/
+
+body.glitch-active #clean-sec-1 .image-wrapper {
+    transform: translate(-10px, 15px) scaleY(1.05);
+}
+
+body.glitch-active .text-1-pack1 { line-height: 0.1; margin-left: -2rem; }
+body.glitch-active .text-1-pack2 { line-height: 0.1; margin-left: 3rem; }
+
+body.glitch-active .creature-2-1 { transform: rotate(45deg) translate(20px, -20px); }
+body.glitch-active .creature-2-2 { transform: rotate(-35deg) translate(-10px, 30px); }
+body.glitch-active .creature-2-3 { transform: scale(1.1) rotate(18deg); }
+body.glitch-active .creature-2-4 { transform: rotate(-15deg) translate(40px, 10px); }
+body.glitch-active .creature-2-5 { transform: skewX(-10deg) translate(-50px, 0); }
+
+body.glitch-active #clean-sec-3 .image-stack {
+    transform: translate(20px, 40px) skewY(-4deg);
+}
+
+body.glitch-active .stack-1 { transform: rotate(-15deg) scale(1.1); }
+body.glitch-active .stack-2 { transform: rotate(55deg) translate(40px, -40px) scale(0.9); }
+body.glitch-active .stack-3 { transform: rotate(115deg) translate(-50px, 60px) scale(1.05); }
+
+body.glitch-active #clean-sec-3 .text-fragment {
+    top: 72%;
+    transform: skewY(5deg);
+}
+
+body.glitch-active .text-3-pack2 p {
+    line-height: 0.05 !important;
+    letter-spacing: -3px;
+}
+
+body.glitch-active .image4-layer-1 { transform: translate(15%, 5%) scale(0.95); z-index: 2; }
+body.glitch-active .image4-layer-2 { transform: translate(-10%, -10%) scale(1.05); z-index: 1; }
+
+body.glitch-active .image6-layer-base { transform: rotate(120deg) scale(1.1); }
+body.glitch-active .image6-layer-top { transform: translate(-5%, 15%) rotate(-5deg); }
+
+body.glitch-active .vch-satellite-visible { top: 0; left: 0; font-size: 1.4rem; }
+body.glitch-active .vch-satellite-coherent { bottom: 0; left: 2rem; font-size: 1.4rem; }
+body.glitch-active .vch-satellite-hyper { bottom: 2rem; left: 5rem; }
+
+body.glitch-active .image8-layer-base { transform: rotate(-25deg) translate(5%, -5%); }
+body.glitch-active .image8-layer-mid { transform: rotate(15deg); }
+body.glitch-active .image8-layer-top { transform: scale(0.9) translate(-10px, 20px); }
+
+body.glitch-active .image9-center { transform: scaleX(1.2) scaleY(0.8); }
+
+body.glitch-active .text-9-container-bottom div {
+    bottom: 0 !important;
+    line-height: 0;
+}
+
+body.glitch-active .image10-wrapper { transform: translate(-60px, -20px) scaleX(0.9); }
+body.glitch-active .text-10-container-right { transform: translate(40px, 30px) skewY(3deg); }
+
+body.glitch-active .image11-layer-base { transform: rotate(-35deg) translate(-50px, 50px); }
+body.glitch-active .image11-layer-mid { transform: rotate(5deg) scale(1.05); }
+body.glitch-active .image11-layer-top { transform: rotate(20deg) translate(50px, -50px); }
+body.glitch-active .glitch-right { top: 0; left: -10px; }
+
+body.glitch-active .image12-layer-base { transform: translate(30px, -40px) scaleY(1.2); }
+body.glitch-active .image12-layer-top { transform: translate(-15%, 15%) scale(1.02); }
+
+body.glitch-active .image13-center { transform: scaleX(0.6) scaleY(1.3) translate(20px, -30px); }
+body.glitch-active .perhaps-p1 { left: 0rem; top: 0px; font-size: 2rem; }
+body.glitch-active .perhaps-p6 { left: 2rem; top: 10px; }
+
+/*==========================================================================
+  ABSOLUTE SABOTAGE: INVASIVE IMAGE OVERLAY (OVERDOSE)
+============================================================================*/
+
+#clean-sec-1,
+#clean-sec-5 {
+    position: relative;
+}
+
+body.glitch-active #clean-sec-1::after {
+    content: url('assets/images/creature_logic/Aliendistorted.png');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    max-height: 1000px;
+    transform: translate(-50%, -50%) scale(1.1) skewX(-6deg);
+    z-index: 99999 !important;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.glitch-active #clean-sec-4::after {
+    content: url('assets/images/creature_logic/aliendistorted2.png');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100%;
+    transform: translate(-45%, -55%) scaleX(1.15) scaleY(1.05);
+    z-index: 99999 !important;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*==========================================================================
+  SECTIONS 2, 5 & 11: TRIPLE TYPOGRAPHIC ASSAULT (CREATURE LOGIC)
+============================================================================*/
+
+body.glitch-active #clean-sec-2::after,
+body.glitch-active #clean-sec-5::after,
+body.glitch-active #clean-sec-11::after {
+    content: "CREATURE\ALOGIC\A\A\A\A\A CREATURE\ALOGIC";
+    white-space: pre;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    font-family: "Funnel Display", sans-serif;
+    font-optical-sizing: auto;
+    font-style: italic;
+    color: #B15EFF !important;
+    font-size: 8rem;
+    font-weight: 400;
+    line-height: 0.75;
+    letter-spacing: -2px;
+    mix-blend-mode: hard-light;
+    text-shadow: 4px 0px 0px rgba(255, 0, 0, 0.4), -4px 0px 0px rgba(0, 0, 255, 0.4);
+    z-index: 99999 !important;
+    pointer-events: none;
+    transform: rotate(-1deg) skewX(-2deg);
+    transition: all 0.1s steps(2);
+}
+
+/*==========================================================================
+  INVASIVE EDITORIAL CREDITS (SECTIONS 6, 8 & 10)
+============================================================================*/
+
+body.glitch-active #clean-sec-6::after,
+body.glitch-active #clean-sec-8::after,
+body.glitch-active #clean-sec-10::after {
+    content: "Photographer: Davide Saleri\A Stylist: Aurora Munaro\A Mua: Chiara Abbatepaolo\A Model: Elisa Bianchi from People Street Casting\A Ass. Photographer: Emanuele Bodei\A Ass. Stylist: Vittoria Cavani\A\A All outfits stylist's own";
+    white-space: pre;
+    position: absolute;
+    width: 380px;
+    font-family: "Hubot Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    font-variation-settings: "wdth" 120 !important;
+    color: #FF5EDC !important;
+    mix-blend-mode: plus-lighter;
+    z-index: 99999 !important;
+    pointer-events: none;
+    transition: all 0.1s steps(2);
+}
+
+body.glitch-active #clean-sec-6::after {
+    text-align: left;
+    left: 4rem;
+    bottom: 10%;
+    transform: skewX(-4deg);
+}
+
+body.glitch-active #clean-sec-8::after {
+    text-align: right;
+    right: 4rem;
+    top: 8%;
+    transform: translate(10px, 0);
+}
+
+body.glitch-active #clean-sec-10::after {
+    text-align: left;
+    left: 5%;
+    top: 25%;
+    transform: skewY(3deg) scale(1.05);
+}

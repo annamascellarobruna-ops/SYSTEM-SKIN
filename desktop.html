@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="desktop-screen">
+
+    <main class="desktop">
+        <div class="desktop-icon" id="to-remain-unseen-app" data-target="to_remain_unseen.html">
+            <img src="assets/icons/eye.png" alt="To Remain Unseen Icon" class="desktop-app-square">
+            <p>TO REMAIN UNSEEN</p>
+        </div>
+
+        <div class="desktop-icon" id="out-of-sync-app" data-target="out_of_sync.html">
+            <img src="assets/icons/no-internet.png" alt="Out of Sync Icon" class="desktop-app-square">
+            <p>OUT OF SYNC</p>
+        </div>
+
+        <div class="desktop-icon" id="creature-logic-app" data-target="creature_logic.html">
+            <img src="assets/icons/alien.png" alt="Creature Logic Icon" class="desktop-app-square">
+            <p>CREATURE LOGIC</p>
+        </div>
+    </main>
+
+    <footer class="taskbar">
+        <div class="taskbar-left">
+            SYSTEM/SKIN
+        </div>
+
+        <div class="taskbar-right">
+            <span id="battery">100%</span>
+            <span id="date"></span>
+            <span id="clock"></span>
+        </div>
+    </footer>
+
+    <div class="warning-window hidden" id="warning-window">
+        <div class="window-header" id="warning-header">
+            <span class="warning-title">ATTENTION!</span>
+            <button id="close-warning">OK</button>
+        </div>
+
+        <div class="window-content">
+            <p>1) MANIFESTO - SYSTEM/SKIN</p>
+            <br>
+            <p>
+                SYSTEM/SKIN is an online platform that explores sabotage not as destruction,
+                but as a <strong>form of resistance and rebellion</strong>. Countering reproducibility and constant visibility, SYSTEM/SKIN intervenes in the digital flow, performing acts
+                of <strong>creative sabotage that make images non-repeatable and unique</strong>. Every glitch, every distortion, every
+                collapse of resolution becomes a mark of singularity: a refusal to conform to endless replication.
+                Ruining an image is not a loss; it is an act of freedom. In the deliberate imperfection of pixels, in the breaking of
+                resolution, we confront the question: <strong>is everything we see truly real?</strong> In the age of <strong>hyper-visibility</strong>, where
+                identities are curated, filtered, and polished, glitch and decay become tools of revelation, showing what is
+                hidden beneath the surface.
+                SYSTEM/SKIN proposes an alternative vision of the digital world, one where images are not meant to be
+                perfect, stable, or eternal. Here, the cracks, the errors, and the moments of distortion carry meaning. They
+                invite reflection, slow down perception, and reveal the impermanent, fragile, and singular nature of reality.
+                In sabotaging images, the platform reminds us that nothing digital, or human, is ever complete, flawless, or
+                fixed. Each alteration is an <strong>act of resistance against the tyranny of replication</strong>, a celebration of the unique,
+                the fleeting, and the unrepeatable. Through what is broken and unfinished, we glimpse the deeper truth of what
+                it means to see, to remember, and to exist in a world that constantly asks us to appear complete and flawless.
+            </p>
+        </div>
+    </div>
+
+    <script defer src="desktop.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+/*---------------- BASE & TYPOGRAPHY ----------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: #cfcfcf;
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    position: relative;
+    min-height: 100vh;
+}
+
+/*---------------- CRT SCANLINES ----------------*/
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.06) 0px,
+        rgba(255, 255, 255, 0.06) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    opacity: 0.6;
+    z-index: 9999;
+}
+
+/*---------------- DESKTOP & SHARED BACKGROUND ----------------*/
+.desktop-screen,
+.login-screen {
+    min-height: 100vh;
+    background-image: url(./assets/images/backgrounds/Background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.desktop-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/*---------------- DESKTOP ICONS ----------------*/
+.desktop-icon {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.desktop-app-square {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    object-fit: contain;
+    padding: 6px;
+    border-radius: 50%;
+    transition: filter 0.2s ease;
+}
+
+.desktop-icon:hover .desktop-app-square {
+    filter: invert(1);
+}
+
+.desktop-icon p {
+    font-size: 0.8rem;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/*---------------- TASKBAR ----------------*/
+.taskbar {
+    height: 40px;
+    background: #0a1645;
+    border-top: 1px solid #919dd2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    color: #b0bbea;
+    font-size: 0.75rem;
+    z-index: 999;
+}
+
+.taskbar-left,
+.taskbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/*---------------- WARNING / MANIFESTO WINDOW ----------------*/
+.warning-window {
+    position: absolute;
+    background: #e4e4e4;
+    border: 1px solid #bbbbbb;
+    box-shadow:
+        0 0 0 1px rgb(4, 19, 38),
+        4px 4px 0 rgba(255, 255, 255, 0.05);
+    overflow: auto;
+    top: 12%;
+    left: 18%;
+    width: 640px;
+    max-height: 70vh;
+}
+
+.window-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 32px;
+    background-color: #8f3c3c;
+    border-top: 1px solid #160707;
+    border-bottom: 1px solid #3f1f1f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: move;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.window-header button {
+    background: #8f3c3c;
+    border: 1px solid #160707;
+    color: white;
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.window-header button:hover {
+    background: #380505;
+}
+
+.window-content {
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    overflow-y: auto;
+    max-height: calc(70vh - 32px);
+    color: #000;
+}
+
+/*---------------- LOGIN & PASSWORD BOX ----------------*/
+.password-box {
+    width: 420px;
+    background: #0a1645;
+    border: 1px solid #919dd2;
+    box-shadow:
+        0 0 0 1px black,
+        6px 6px 0 rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.password-box::before {
+    content: "SYSTEM/SKIN AUTHORIZATION";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: #050b24;
+    border-bottom: 1px solid #919dd2;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    color: white;
+    font-size: 0.75rem;
+    line-height: 32px;
+    box-sizing: border-box;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.password-box h1 {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#password-input,
+#enter-button {
+    background: #050b24;
+    border: 1px solid #919dd2;
+    color: white;
+}
+
+#password-input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+#password-input:focus {
+    border-color: white;
+}
+
+#password-input::placeholder {
+    color: #b0bbea;
+}
+
+#enter-button {
+    width: fit-content;
+    font-weight: 500;
+    font-size: 0.8rem;
+    padding: 0.45rem 1rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+#enter-button:hover {
+    background: #112269;
+    border-color: white;
+}
+
+#enter-button:active {
+    transform: translateY(1px);
+}
+
+/*---------------- MINI WARNING WINDOWS ----------------*/
+.warning-window.mini-warning {
+    width: 320px;
+    max-height: 200px;
+    box-shadow:
+        0 0 0 1px rgb(4, 19, 38),
+        6px 6px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease;
+}
+
+.window-header.mini-header {
+    background-color: #5a2424;
+    height: 28px;
+    font-size: 0.7rem;
+}
+
+.window-header.mini-header button {
+    background: #5a2424;
+    padding: 0.1rem 0.4rem;
+}
+
+.window-header.mini-header button:hover {
+    background: #2b0c0c;
+}
+
+.window-content.mini-content {
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #111;
+    text-align: center;
+    max-height: calc(200px - 28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,160 @@
+/* IMPORTACIÓN DE LA FUENTE: Space Grotesk (Pesos 400 y 700) */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+
+/* Configuración base para el ambiente oscuro */
+body.unseen-experience {
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    font-family: 'Space Grotesk', sans-serif; /* CAMBIADO */
+    position: relative;
+}
+
+/* Encabezado: Limpio, blanco y estático */
+.unseen-header {
+    align-items: flex-start; 
+    padding-left: 10%; 
+    text-align: left;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.unseen-header h1 {
+    font-size: 9.5rem; 
+    letter-spacing: 0.2rem; /* Ajustado sutilmente para Space Grotesk */
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: #ffffff; 
+    text-align: left; 
+}
+
+.scarcity-text {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    margin: 0;
+    text-align: left; 
+}
+
+/* --- ESTRUCTURA EN ZIG-ZAG ASIMÉTRICO Y FLUIDO --- */
+.gallery-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;             
+    max-width: 1500px;      
+    margin: 0 auto;         
+    padding: 0 60px 60vh 60px; 
+    position: relative;
+    z-index: 1;
+}
+
+/* Cada ítem de la imagen (Base de control) */
+.gallery-item {
+    position: relative;
+    display: block;
+    transition: transform 0.3s ease; 
+    z-index: 3; /* CAPA SUPERIOR */
+}
+
+/* --- ROMPIENDO LA RIGIDEZ CON VARIACIONES RÍTMICAS --- */
+
+.gallery-item:nth-child(4n+1) {
+    align-self: flex-start;
+    width: 45%;
+    max-width: 550px;
+    margin-left: 5%;
+}
+
+.gallery-item:nth-child(4n+2) {
+    align-self: flex-end;
+    width: 50%;
+    max-width: 600px;
+    margin-right: 15%; 
+    margin-top: -20px; 
+}
+
+.gallery-item:nth-child(4n+3) {
+    align-self: flex-start;
+    width: 55%;
+    max-width: 680px;
+    margin-left: 12%; 
+    margin-top: 40px;
+}
+
+.gallery-item:nth-child(4n+4) {
+    align-self: flex-end;
+    width: 42%;
+    max-width: 500px;
+    margin-right: 2%;  
+    margin-top: -40px; 
+}
+
+/* LA IMAGEN EN SU ESTADO NATURAL (ESTABLE Y LIMPIA) */
+.deconstructed-image {
+    width: 100%;
+    height: auto;           
+    display: block;
+    object-fit: contain;    
+    filter: blur(0px) opacity(1);
+    transition: filter 0.8s ease, opacity 0.8s ease;
+    will-change: filter, opacity;
+}
+
+/* --- EFECTO POLVO POR PENALIZACIÓN EN LAS IMÁGENES --- */
+/* Añadimos !important para que el JS no pueda bloquear la transición del hover */
+.gallery-item:hover .deconstructed-image {
+    filter: blur(30px) !important;     /* Se difumina emulando polvo */
+    opacity: 0 !important;             /* Se desvanece por completo */
+}
+
+/* --- CAPA ÚNICA DE TEXTOS FLOTANTES (PARALLAX UNIFICADO) --- */
+
+.parallax-text-container {
+    position: absolute;
+    top: var(--top-offset);
+    left: var(--left-offset);
+    width: 45%; 
+    max-width: 500px;
+    min-width: 290px;
+    
+    /* CAPA INFERIOR */
+    z-index: 1; 
+    pointer-events: none; 
+    user-select: none;
+    will-change: transform;
+}
+
+.parallax-text-container p {
+    font-family: 'Space Grotesk', sans-serif; /* CAMBIADO */
+    font-size: 1.25rem; /* Subido ligeramente un pixel ya que sans-serif suele verse más pequeña que monospace */
+    line-height: 1.6;
+    letter-spacing: -0.01em; /* Un tracking sutilmente ajustado le da un toque muy premium a esta fuente */
+    margin: 0;
+    white-space: normal;
+    text-align: left;
+    
+    /* Color Casi Blanco Unificado (#f5f5f5 al 85% de opacidad) */
+    color: rgba(245, 245, 245, 0.85); 
+    
+    /* Sombra marcada para que las letras se lean sobre cualquier fondo */
+    text-shadow: 0px 2px 8px #000000, 0px 4px 12px #000000; 
+}
+
+/* --- ESTILO ESPECÍFICO PARA LOS CRÉDITOS --- */
+.credit-block p {
+    font-size: 1rem !important; 
+    line-height: 1.8 !important; 
+    letter-spacing: 0.02em !important; 
+    color: rgba(162, 162, 162, 0.9) !important;
+    margin: 0; /* Reseteamos márgenes para controlar mejor el flujo */
+}
+
+/* Espaciado extra opcional para la línea de Outfits */
+.credit-block .outfits-credit {
+    margin-top: 1rem !important;
+}
