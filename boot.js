@@ -25,28 +25,20 @@ Opening unstable archive ...
 ENTERING SYSTEM/SKIN
 `;
 
+document.body.style.marginLeft = "40px";
+document.body.style.marginTop = "30px";
+
 const textElement = document.getElementById("boot-text");
 
 let index = 0;
 
-
-
 function typeText() {
-
     if (index >= bootText.length) {
-
         setTimeout(() => {
-
             window.location.href = "login.html";
-
         }, 600);
-
         return;
     }
-
-
-
-    /* SMALL RANDOM BURSTS */
 
     const burst = Math.floor(Math.random() * 6) + 2;
 
@@ -54,24 +46,13 @@ function typeText() {
 
     index += burst;
 
-
-
-    /* FAST BUT IRREGULAR */
-
     let delay;
 
     if (Math.random() < 0.12) {
-
-        /* tiny lag spikes */
         delay = 60 + Math.random() * 120;
-
     } else {
-
-        /* very fast typing */
         delay = 5 + Math.random() * 18;
     }
-
-
 
     setTimeout(typeText, delay);
 }
